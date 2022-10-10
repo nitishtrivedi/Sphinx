@@ -4,6 +4,13 @@ This application is made using MERN Stack. We have Documentation structured with
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 $-- CREDENTIALS --$
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+1. MongoDB
+
+DB UID: nitishtrivedi-sphinx
+DB PWD: 7350804321
+
+
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 $-- COMMANDS --$
@@ -28,6 +35,10 @@ Commands:
 - npm install axios (Use in FRONTEND. Used for creating APIs)
 - npm install use-reducer-logger --force (Use in FRONTEND. Used to log state changes for reducer.)
 
+5. Install React Bootstrap:
+Commands:
+- npm install react-bootstrap bootstrap --force (Use in FRONTEND.)
+- npm install react-router-bootstrap --force
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,6 +95,24 @@ Repository name is Sphinx. GIT is initialised in parent folder i.e. "source"
 - Added Condition based rendering for the main content to be displayed.
 
 Commit 1.1 WAS FOR CODE DEVELOPMENT TILL HERE.
+Commit 1.2 FROM REACT BOOTSTRAP ONWARDS
+
+8. Installing React Bootstrap:
+- Install React Bootstrap in FRONTEND by using command 'npm install react-bootstrap bootstrap'.
+- IN app.js, we converted a simple header to bootstrap header.
+- We added bootstrap components like NavBar, LinkContainer, Container etc. 
+- Imported NavBar, Container from react-bootstrap/NavBar or Container.
+- Install React Router Bootstrap using command 'npm install react-router-bootstrap --force'
+- Import LinkContainer from React Router Bootstrap.
+- Changed CSS for NavBar. That can easily be done for any component by adding className attribute, and then write CSS for the same in index.css
+
+9. Create Product and Rating Components:
+- Create a Rating Component. 
+- Created a file Product.js for individual product details. 
+- Implemented useReducer in the HomeScreen.js file. 
+
+10. Create Product Screen: 
+- 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,3 +135,9 @@ https://reactjs.org/docs/hooks-state.html
 
 React Reducer Hook:
 https://reactjs.org/docs/hooks-reference.html#usereducer
+
+Bootstrap:
+https://getbootstrap.com/
+
+React Bootstrap:
+https://react-bootstrap.github.io/
