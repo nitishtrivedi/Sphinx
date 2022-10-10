@@ -1,11 +1,12 @@
-import { useEffect, useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
+import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
-import data from '../data';
-import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
 
 //Define Reducer function
 const reducer = (state, action) => {
@@ -23,7 +24,7 @@ const reducer = (state, action) => {
 
 function HomeScreen() {
   //Hooks
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
     error: '',
@@ -41,7 +42,7 @@ function HomeScreen() {
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
         //If Error, show error
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
 
       //Fill Products
@@ -53,6 +54,9 @@ function HomeScreen() {
   //Output
   return (
     <div className="home-screen-container">
+      <Helmet>
+        <title>Sphinx</title>
+      </Helmet>
       <h1>Featured Products</h1>
       {/* IMPORTED DATA.JS and Called Products here. Used JSX to render the data from data.js file */}
       <div className="products">
@@ -60,9 +64,9 @@ function HomeScreen() {
         {
           //Use conditional Rendering
           loading ? (
-            <div>Loading...</div>
+            <LoadingBox />
           ) : error ? (
-            <div>{error}</div>
+            <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             <Row>
               {products.map((product) => (

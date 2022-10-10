@@ -33,12 +33,16 @@ Commands:
 4. Create APIs and Call APIs from BACKEND to FRONTEND:
 Commands:
 - npm install axios (Use in FRONTEND. Used for creating APIs)
-- npm install use-reducer-logger --force (Use in FRONTEND. Used to log state changes for reducer.)
+- npm install use-reducer-logger --force (Use in FRONTEND. Used to log state changes for reducer. INSTALL IF REQUIRED ONLY)
 
 5. Install React Bootstrap:
 Commands:
 - npm install react-bootstrap bootstrap --force (Use in FRONTEND.)
 - npm install react-router-bootstrap --force
+
+6. Install React Helmet
+Commands:
+- npm install react-helmet-async
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -112,7 +116,31 @@ Commit 1.2 FROM REACT BOOTSTRAP ONWARDS
 - Implemented useReducer in the HomeScreen.js file. 
 
 10. Create Product Screen: 
-- 
+- Created Grid system in React Bootstrap.
+- Created individual CSS styles for each elements
+- Used Badge, Buttons etc from React Bootstrap.
+- Installed React Helmet library for showing the name of the slug in the <title> of browser.
+- Use command npm install react-helmet-async for installation
+
+11. Create Loading and Error Message Components:
+- Created 2 new components. LoadingBox.js and MessageBox.js.
+- Added code to display LoadingBox and MessageBox in event of error.
+- Metadata passed with the res.status from backend will be displayed here. 
+- Added the LoadingBox and MessageBox in the HomeScreen and ProductScreen screens.
+
+12. Creating Cart Page:
+- Create file named Store.js in src of frontend.
+- Used createContext and useReducer in Store.js. Created a reducer function in the Store.js file. 
+- Added Store.js logic in ProductScreen.js and App.js files
+- Added Cart in the NavBar of application.
+
+13. Creating Add to Cart Logic:
+- Create ID for each product in data.js of backend.
+- Refer Lecture 17
+
+14. Create Cart Screen:
+- Refer to Lecture 18
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -141,3 +169,7 @@ https://getbootstrap.com/
 
 React Bootstrap:
 https://react-bootstrap.github.io/
+
+React Context:
+https://reactjs.org/docs/context.html
+

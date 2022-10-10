@@ -87,3 +87,21 @@ main {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+
+/* PRODUCT SCREEN CSS */
+.product-image-div img {
+  width: 100%;
+  border: 2px solid #624b1c;
+  border-radius: 5px;
+  box-shadow: 5px 5px 24px 6px #624b1c;
+}
+.product-container {
+  background-color: #f6e2b3;
+  border: 1px solid #624b1c;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
