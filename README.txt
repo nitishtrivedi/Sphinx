@@ -9,6 +9,8 @@ $-- CREDENTIALS --$
 DB UID: nitishtrivedi-sphinx
 DB PWD: 7350804321
 
+Conn String: mongodb+srv://nitishtrivedi-sphinx:7350804321@cluster0.lh4ll6m.mongodb.net/Sphinx-Dev-Database?retryWrites=true&w=majority
+
 
 
 
@@ -43,6 +45,21 @@ Commands:
 6. Install React Helmet
 Commands:
 - npm install react-helmet-async
+
+7. Install Mongoose in Backend:
+Commands:
+- npm install mongoose
+
+8. Install dotenv package in Backend:
+Commands:
+- npm install dotenv
+
+9. Create User API:
+Commands:
+- npm install express-async-handler
+- npm install bcryptjs
+- npm install jsonwebtoken
+- npm install react-toastify (For showing Popup messages)
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -141,6 +158,8 @@ Commit 1.2 FROM REACT BOOTSTRAP ONWARDS
 14. Create Cart Screen:
 - Refer to Lecture 18
 
+15. Create SignIn Screen - Section 7, Commit 1.4
+- Create SignIn Screen
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,3 +192,5 @@ https://react-bootstrap.github.io/
 React Context:
 https://reactjs.org/docs/context.html
 
+Mongoose:
+https://mongoosejs.com/

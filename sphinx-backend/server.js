@@ -3,33 +3,38 @@
 //Imports
 import express from 'express';
 import data from './data.js';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoute.js';
+import userRouter from './routes/userRoutes.js';
+
+//Run dotenv config to fetch variables from dotenv file in this file
+dotenv.config();
+
+//Connect to MongoDB Database using Mongoose
+mongoose
+  .connect(process.env.CONNECTION_STRING)
+  .then(() => {
+    console.log('Connected to', process.env.DB_NAME);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
 //Functions
 const app = express();
 
-//GET
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
-//GET individual Product
-app.get('/api/products/slug/:slug', (req, res) => {
-  const product = data.products.find((x) => x.slug === req.params.slug);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-//GET Product by ID
-
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
+//Middleware
+app.use('/api/seed', seedRouter);
+app.use('/api/products', productRouter);
+app.use('/api/users', userRouter);
+//Error Handler
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
 //Define PORT
